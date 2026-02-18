@@ -1,0 +1,14 @@
+version: 2
+models:
+  - name: POSITION_UB_BANK
+    description: The positions we have in the UB bank
+    columns:
+      - name: UNREALIZED_PROFITS
+        description: This holds the current as per report date unrelised profit or loss of the position
+        tests:
+          - not_null
+      - name: UNREALIZED_PROFITS_PCT
+        description: Gives the profit percentage with the round of 5 
+        tests:
+          - not_null
+          
