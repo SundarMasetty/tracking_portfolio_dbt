@@ -5,3 +5,59 @@ sources:
     schema: SOURCE_DATA
     tables:
       - name: UB_BANK_POSITION
+        description: >
+          This is the landing table holding the data imported from the
+          csv file extracted from the UB bank
+        columns:
+          - name: ACCOUNT_ID
+            description: The code for the account at UB bank
+            tests:
+              - not_null
+          - name: SYMBOL
+            description: This is the unique security symbol for a company
+            tests:
+              - unique
+              - not_null
+          - name: DESCRIPTION
+            description: contains the description of the securities holding by UB bank
+            tests: 
+              - not_null
+          - name: EXCHANGE
+            description: >
+              this gives the information of the exchanges where the positions of
+              the UB bank is held or holding
+            tests:
+              - not_null   # we can also add the accepted_values test to get alert when any new exchange is added
+          - name: REPORT_DATE
+            description: >
+              This column contains the date of report was extracted by ub bank and we consider from this date
+              the position is effective 
+            tests:
+              - not_null
+          - name: QUANTITY
+            description: >
+              The number of securities we hold in the portfolio at UB bank at the reportdate
+            tests:
+              - not_null
+          - name: COST_BASE
+            description: >
+              The price of the security we bought we hold at UB bank at report date
+            tests:
+              - not_null
+          - name: POSITION_VALUE
+            description: >
+              The value of the securities in the portfolio at ub bank on the report date
+            tests:
+              - not_null
+          - name: CURRENCY
+            description: >
+              The currency in which the securities are holded by UB bank at report date
+            tests:
+              - not_null
+               
+              
+              
+              
+            
+            
+               
