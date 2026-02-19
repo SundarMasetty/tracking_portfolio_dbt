@@ -48,6 +48,7 @@ models:
       portfolio:  # This will be one of the data mart
         +materialized: table
         +schema: MART_PORTFOLIO
+
 snapshots:
   portfolio_tracking:
     +target_schema: SNAPSHOTS
