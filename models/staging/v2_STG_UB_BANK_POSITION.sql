@@ -1,5 +1,8 @@
 -- we will be adding some meta data for this staging version and i will be adding record_source for the previous staging query and a cte
 -- RECORD_SOURCE is a metadata which we can able to find the source where it is derived from
+
+--SRC_DATA CTE we will be concerned with the incoming source data we want to adapt and extract the load data that we want
+--default_record_cte we will be concerned with the showing the default_records with some meaningfull value
 WITH 
     src_data AS (
         SELECT 
