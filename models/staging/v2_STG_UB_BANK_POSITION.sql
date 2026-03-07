@@ -3,6 +3,9 @@
 
 --SRC_DATA CTE we will be concerned with the incoming source data we want to adapt and extract the load data that we want
 --default_record_cte we will be concerned with the showing the default_records with some meaningfull value
+{{ 
+    config(materialized='ephermal')
+}}
 WITH 
     src_data AS (
         SELECT 

@@ -5,14 +5,17 @@ models:
     description: "Staged UB Bank position data with metadata and hashed keys"
     columns:
 
-      #RECORD_SOURCE
+      # RECORD_SOURCE
       - name: RECORD_SOURCE
         description: "Metadata field identifying the data source"
         tests:
           - not_null
           - accepted_values:
-              values:
-                - 'SOURCE_DATA.UB_BANK_POSITION'
+              arguments:
+                values:
+                  - 'SOURCE_DATA.UB_BANK_POSITION'
+
+      # Other columns can be added here
 
       #POSITION_HKEY (Business Key)
       - name: POSITION_HKEY
