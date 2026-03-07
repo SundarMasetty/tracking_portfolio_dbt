@@ -5,6 +5,7 @@ WITH current_from_snapshot as (
 SELECT *, POSITION_VALUE - COST_BASE AS UNREALIZED_PROFITS,
 ROUND(UNREALIZED_PROFITS / COST_BASE, 5)  AS UNREALIZED_PROFITS_PCT
 -- FROM {{source('ub_bank','UB_BANK_POSITION')}}
+-- FROM {{ref('v2_STG_UB_BANK_POSITION')}}
 FROM current_from_snapshot
  
  
