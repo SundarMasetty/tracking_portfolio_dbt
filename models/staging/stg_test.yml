@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: v2_STG_UB_BANK_POSITION
+    description: "Staged UB Bank position data with metadata and hashed keys"
+    columns:
+
+      # RECORD_SOURCE
+      - name: RECORD_SOURCE
+        description: "Metadata field identifying the data source"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - 'SOURCE_DATA.UB_BANK_POSITION'
+
+      # Other columns can be added here
+
+      #POSITION_HKEY (Business Key)
+      - name: POSITION_HKEY
+        description: "Hash key derived from ACCOUNT_CODE and SECURITY_CODE"
+        tests:
+          - not_null
+          - unique
+
+      #POSITION_HDIFF (Change Detection)
+      - name: POSITION_HDIFF
+        description: "Hash diff derived from all descriptive columns"
+        tests:
+          - not_null
+
+      # ── LOAD_TS_UTC ──
+      - name: LOAD_TS_UTC
+        description: "Timestamp of when the dbt run started (UTC)"
+        tests:
+          - not_null

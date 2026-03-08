@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: POSITION_UB_BANK
+  - name: REF_POSITION_UB_BANK
     description: The positions we have in the UB bank
     columns:
       - name: UNREALIZED_PROFITS
