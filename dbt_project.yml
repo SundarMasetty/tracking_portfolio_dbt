@@ -55,4 +55,11 @@ snapshots:
 
 seeds:
   +schema: seed_data
-  
+  portfolio_tracking:
+    UB_Bank_SECURITY_INFO:
+      +post-hook: 
+        - "UPDATE {{this}} SET LOAD_TS = '{{run_started_at}}' WHERE LOAD_TS is null" # as LOAD_TS added after loading CSV now we need time when it stareted
+      +column_types:
+        LOAD_TS: TIMESTAMP
+    
+
