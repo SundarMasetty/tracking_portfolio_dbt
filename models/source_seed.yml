@@ -1,0 +1,7 @@
+#Defining the external data sources for the seeds
+version: 2
+sources:
+  - name: seeds
+    schema: "{{target.schema}}_SEED_DATA"
+    tables:
+      - name: UB_BANK_SECURITY_INFO
