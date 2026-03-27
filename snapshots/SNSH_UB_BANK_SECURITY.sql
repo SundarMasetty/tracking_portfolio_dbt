@@ -1,4 +1,4 @@
-{%snapshot SNSH_UB_BANK_SECURITY %}
+{%snapshot SNSH_UB_BANK_SECURITY_INFO %}
 {{
     config(
         unique_key = 'POSITION_HKEY',
@@ -7,5 +7,5 @@
         
     )
 }}
-SELECT * FROM {{ref('STG_UB_BANK_SECURITY')}}
+SELECT * FROM {{ref('STG_UB_BANK_SECURITY_INFO')}}
 {% endsnapshot %}
