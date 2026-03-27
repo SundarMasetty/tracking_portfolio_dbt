@@ -19,3 +19,15 @@ hashed as (
     LOAD_TS AS LOAD_TS_UTC FROM src_data
 )
 SELECT * FROM hashed;
+
+default_record as (
+    SELECT  '-1' as SECURITY_CODE,
+    , 'Missing' as SECURITY_NAME
+    , 'Missing' as SECTOR_NAME
+    , 'Missing' as INDUSTRY_NAME
+    , '-1' as SECURITY_CODE
+    , '-1' as EXCHANGE_CODE
+    , '2020-01-01' as LOAD_TS_UTC
+    , 'System.DefaultKey' as RECORD_SOURCE
+
+)
